@@ -12,6 +12,7 @@ const pictureMarkup = createPictureCardMarkup(galleryItems);
 
 pictureContainer.insertAdjacentHTML("beforeend", pictureMarkup)
 
+
 function createPictureCardMarkup(galleryItems) {
     return galleryItems.map(({ preview, original, description }) => {
         return `<a class="gallery__item" href="${original}">
@@ -27,7 +28,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
 });
 
 // console.log(galleryItems);
-
 
 
 
