@@ -16,11 +16,15 @@ let objectStorage = {
 getInputFromLS();
 
 function getInputFromLS() {
-    dataLS = localStorage.getItem(STORAGE_KEY);
-    if (!dataLS) return;
-    objectStorage = JSON.parse(dataLS);
-    for (let key in objectStorage) {
-        form.elements[key].value = objectStorage[key];
+    try {
+        dataLS = localStorage.getItem(STORAGE_KEY);
+        if (!dataLS) return;
+        objectStorage = JSON.parse(dataLS);
+        for (let key in objectStorage) {
+            form.elements[key].value = objectStorage[key];
+        }
+    } catch (error) {
+        console.log("Get state error: ", error.message);
     }
 };
 
