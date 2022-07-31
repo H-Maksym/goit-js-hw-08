@@ -17,7 +17,7 @@ getInputFromLS();
 
 function getInputFromLS() {
     try {
-        dataLS = localStorage.getItem(STORAGE_KEY);
+        const dataLS = localStorage.getItem(STORAGE_KEY);
         if (!dataLS) return;
         objectStorage = JSON.parse(dataLS);
         for (let key in objectStorage) {
